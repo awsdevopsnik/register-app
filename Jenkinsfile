@@ -22,7 +22,7 @@ pipeline {
 
         stage("Checkout from SCM"){
                 steps {
-                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/Ashfaque-9x/register-app'
+                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/awsdevopsnik/register-app'
                 }
         }
 
@@ -50,7 +50,7 @@ pipeline {
 	    stage("Quality Gate"){
            steps {
                script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'jenkins-sonarqube-token'
+                    waitForQualityGate abortPipeline: false, credentialsId: 'Jenkins-SqonarQube-Token'
                 }	
             }
 
